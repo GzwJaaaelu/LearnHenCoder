@@ -1,0 +1,29 @@
+《Http 的原理、工作机制、数据格式有和 REST》
+
+1.Http 到底是什么？
+ - 超文本传输协议。
+ - 超文本：在电脑中显示的、含有可以指向其他文本的链接的文本。
+ - 现在超文本的定义被拉宽了，一开始只是配合 Html 使用，现在可以发送图片、音频、视频等等。
+2.Http 工作方式。
+3.请求方法：
+ - GET，用于获取资源，没有 body。
+ - POST，用于增加或修改资源，有 body。
+ - PUT， 修改资源，有 body。 POST 与 PUT 时幂等的，幂等就是做一次与做多次是一样的。
+ - DELETE，删除资源，没有 body。
+ - HEAD，HEAD 和 GET 几乎是一样的，区别在于，用 HEAD 时服务器不会返回 body。可以用于做下载的时候先确认这个文件有多大。
+4.状态码：
+ - 1xx：临时性消息。
+ - 2xx：成功。
+ - 3xx：重定向，你这个 URL 已经被改了，你去访问另一个吧 ，但是这个用户感受不到，自动帮你做了。
+ - 4xx：客户端错误，客户端可以修正。
+ - 5xx：服务器错误，不是客户端的错误。
+    - 4xx 和 5xx 分开是为了调试，快速定位出问题。
+5.常见 Header：
+ - Host：服务器主机地址。
+ - Content-Type/Content-Length：Body 的类型/长度。
+    - text/html：html 文本，用于浏览器页面响应。
+    - application/x-www-form-urlecncoded：普通表单，encoded URL 格式。
+    - multipart/form-data：多部分形式，一般用于传输包含二进制内容的多项内容。
+    - application/json：json 形式，用于 Web Api 的响应或 POST/PUT 请求。
+    - image/jpeg / application/zip：单文件，用于 Web Api 的响应或 POST/PUT 请求。
+ - Location：重定向的目标 URL。
