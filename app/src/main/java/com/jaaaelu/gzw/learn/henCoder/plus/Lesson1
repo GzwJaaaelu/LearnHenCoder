@@ -27,3 +27,30 @@
     - application/json：json 形式，用于 Web Api 的响应或 POST/PUT 请求。
     - image/jpeg / application/zip：单文件，用于 Web Api 的响应或 POST/PUT 请求。
  - Location：重定向的目标 URL。
+ - User-Agent：用户代理，其实用就是用户的客户端，这样可以根据不同的设备类型显示的不同内容。
+ - Range/Accept-Range：指定 body 的内容返回，比如服务器支持分段取内容的时候。
+ - Cookie/Set-Cookie：发送 Cookie / 设置 Cooike。
+ - Authorization：授权信息。
+6.其他部分不常用的：
+ - Accept：客户端能接收的数据类型。如 text/html。
+ - Accept-Charset：客户端接收的字符集。如 utf-8。
+ - Accept-Encoding：客户端接收的压缩编码类型。如 gzip。
+ - Content-Encoding：压缩类型。如 gzip。
+7.Cache 和 Buffer。
+ - Cache，缓存，用与某个资源我用完了，等会我还要用，这时候使用缓存，是为了速度。
+ - Buffer，缓冲，针对工作流，有生产的上游，有消费的下游，上游多生产一些给下游稍后用，用与上游生产太快了，先存着，或者下游晚点消费，也先存着，比如麦当劳的在用餐高峰之前先生产好很多汉堡。
+ - 相同点是都要暂时存一下。
+ - Cache-Control：
+	- no-cache：服务器告诉客户端，你可以缓存，但是你需要再次使用这个资源的时候你要先来问一问我这个资源失效了没。
+	- no-store：不去缓存。
+	- max-age：失效日期，在失效日期之前不用来问我这个资源失效了没，你就直接用就行。
+ // 可以用一下两种，一种是看看改了没，一种是比对文件是否一致。
+ - Last-Modified：最近修改时间，用于二次询问，比如上次修改时间是 10.10，那我们可以去问这个资源在 10.10 改过没，没有的话就直接用缓存的就行了。
+	- If-Modified-SInse：是否在什么之前改动过。
+ - Etag，相当于指纹，通过这个对文件作对比。
+	-If-None-Match：你最新的资源还是这个 tag 么？如果不是就给我最新的资源吧。
+ - Cache-Control：
+	服务器告诉路上的节点是否帮助进行缓存。
+	- private：不帮助。
+	- public：帮助。
+8.REST：一种架构风格。
