@@ -13,7 +13,10 @@
 
     <com.jaaaelu.gzw.learn.henCoder.customizeVIew.Dashboard
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="32dp"/>
+        android:layout_height="300dp"/>
+
+    <com.jaaaelu.gzw.learn.henCoder.customizeVIew.PieChart
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
