@@ -19,7 +19,7 @@ import com.jaaaelu.gzw.learn.henCoder.util.Utils;
  */
 
 public class PieChart extends View {
-    private static final int RADIUS = (int) Utils.dp2px(150);
+    private static final int RADIUS = (int) Utils.dp2px(120);
     private static final float LENGTH = Utils.dp2px(20);
     private static final int PULLED_OUT_INDEX = 2;
     //  ANTI_ALIAS_FLAG 用来防锯齿

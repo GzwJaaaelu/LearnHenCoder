@@ -25,7 +25,7 @@ public class Dashboard extends View {
     private static final int ANGLE = 120;
     //  仪表盘半径
     private static final int RADIUS = 200;
-    private static final float LENGTH = Utils.dp2px(90);
+    private static final float LENGTH = 150;
     //  ANTI_ALIAS_FLAG 用来防锯齿
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     //  单个刻度

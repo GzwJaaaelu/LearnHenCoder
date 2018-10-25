@@ -56,7 +56,8 @@ public class AvatarView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mBounds.set(PADDING, PADDING, PADDING + WIDTH, PADDING + WIDTH);
+        mBounds.set(getWidth() / 2 - WIDTH / 2, getHeight() / 2 - WIDTH / 2,
+                getWidth() / 2 + WIDTH / 2, getHeight() / 2 + WIDTH / 2);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -64,20 +65,21 @@ public class AvatarView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         //  为了画一个黑边
-        canvas.drawOval(PADDING, PADDING, PADDING + WIDTH, PADDING + WIDTH, mPaint);
+        canvas.drawOval(getWidth() / 2 - WIDTH / 2, getHeight() / 2 - WIDTH / 2,
+                getWidth() / 2 + WIDTH / 2, getHeight() / 2 + WIDTH / 2, mPaint);
         //  借用离屏缓冲来做剪裁，因为我们以为底层图像是 drawOval 的圆，其实是整个屏幕已经绘制好的区域
         //  绘制之前先把对应区域取下来
         int saved = canvas.saveLayer(mBounds, mPaint);
         //  底层图像
         //  顺便往里面挪一下
-        canvas.drawOval(PADDING + EDGE_WIDTH, PADDING + EDGE_WIDTH,
-                PADDING + WIDTH - EDGE_WIDTH, PADDING + WIDTH - EDGE_WIDTH, mPaint);
+        canvas.drawOval((getWidth() / 2 - WIDTH / 2) + EDGE_WIDTH, (getHeight() / 2 - WIDTH / 2) + EDGE_WIDTH,
+                (getWidth() / 2 + WIDTH / 2) - EDGE_WIDTH, (getHeight() / 2 + WIDTH / 2) - EDGE_WIDTH, mPaint);
         //  设置图形叠加时候叠加效果
         //  SRC_IN 表示叠加时候，要露出上层图像与底层图像叠加时重合部分上层图像的内容
         mPaint.setXfermode(mXfermode);
         //  mBitmap 为上层图像，然后两者叠加，取重复部分就是圆形的部分，然后 SRC_IN 来保证显示的内容为上
         //  层的图像
-        canvas.drawBitmap(mBitmap, PADDING, PADDING, mPaint);
+        canvas.drawBitmap(mBitmap, getWidth() / 2 - WIDTH / 2, getHeight() / 2 - WIDTH / 2, mPaint);
         //  清理操作
         mPaint.setXfermode(null);
         canvas.restoreToCount(saved);
