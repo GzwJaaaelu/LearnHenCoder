@@ -5,17 +5,17 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".customizeVIew.CustomViewActivity">
+              tools:context=".customizeVIew.one.CustomViewActivity">
 
-    <com.jaaaelu.gzw.learn.henCoder.customizeVIew.AvatarView
+    <com.jaaaelu.gzw.learn.henCoder.customizeVIew.one.AvatarView
         android:layout_width="match_parent"
         android:layout_height="220dp"/>
 
-    <com.jaaaelu.gzw.learn.henCoder.customizeVIew.Dashboard
+    <com.jaaaelu.gzw.learn.henCoder.customizeVIew.one.Dashboard
         android:layout_width="match_parent"
         android:layout_height="300dp"/>
 
-    <com.jaaaelu.gzw.learn.henCoder.customizeVIew.PieChart
+    <com.jaaaelu.gzw.learn.henCoder.customizeVIew.one.PieChart
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
