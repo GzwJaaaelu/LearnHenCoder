@@ -28,7 +28,7 @@ public class CameraView extends View {
 //        //  mCamera 默认 Location (0, 0, -8)
 //        //  8 的单位是英寸，一英寸 = 72 像素，也就是 -8 = -8 * 72
 //        //  对 Camera Location 做适配
-        mCamera.setLocation(0, 0, -8 * getResources().getDisplayMetrics().density);
+        mCamera.setLocation(0, 0, -2f * getResources().getDisplayMetrics().density);
     }
 
     public CameraView(Context context) {
@@ -68,48 +68,48 @@ public class CameraView extends View {
 //        canvas.restore();
 
 
-//        //  上面不变的
-//        canvas.save();
-//        canvas.translate(IMAGE_WIDTH / 2 + 200, IMAGE_WIDTH / 2 + 0);
-//        canvas.rotate(-20);
-//        canvas.clipRect(-IMAGE_WIDTH, -IMAGE_WIDTH, IMAGE_WIDTH, 0);
-//        canvas.rotate(20);
-//        canvas.translate(-(IMAGE_WIDTH / 2 + 200), -(IMAGE_WIDTH / 2 + 0));
-//        canvas.drawBitmap(mAvatar, 200, 0, mPaint);
-//        canvas.restore();
-
-//        //  下面翻折的
-//        canvas.save();
-//        canvas.translate(IMAGE_WIDTH / 2 + 200, IMAGE_WIDTH / 2 + 0);
-//        canvas.rotate(-20);
-//        mCamera.applyToCanvas(canvas);
-//        canvas.clipRect(-IMAGE_WIDTH, 0, IMAGE_WIDTH, IMAGE_WIDTH);
-//        canvas.rotate(20);
-//        canvas.translate(-(IMAGE_WIDTH / 2 + 200), -(IMAGE_WIDTH / 2 + 0));
-//        canvas.drawBitmap(mAvatar, 200, 0, mPaint);
-//        canvas.restore();
-
-
-        // 绘制上半部分
+        //  上面不变的
         canvas.save();
-        canvas.translate(100 + 600 / 2, 100 + 600 / 2);
+        canvas.translate(IMAGE_WIDTH / 2 + 200, IMAGE_WIDTH / 2 + 0);
         canvas.rotate(-20);
-        canvas.clipRect(- 600, - 600, 600, 0);
+        canvas.clipRect(-IMAGE_WIDTH, -IMAGE_WIDTH, IMAGE_WIDTH, 0);
         canvas.rotate(20);
-        canvas.translate(- (100 + 600 / 2), - (100 + 600 / 2));
-        canvas.drawBitmap(mAvatar, 100, 100, mPaint);
+        canvas.translate(-(IMAGE_WIDTH / 2 + 200), -(IMAGE_WIDTH / 2 + 0));
+        canvas.drawBitmap(mAvatar, 200, 0, mPaint);
         canvas.restore();
 
-        // 绘制下半部分
+        //  下面翻折的
         canvas.save();
-        canvas.translate(100 + 600 / 2, 100 + 600 / 2);
+        canvas.translate(IMAGE_WIDTH / 2 + 200, IMAGE_WIDTH / 2 + 0);
         canvas.rotate(-20);
         mCamera.applyToCanvas(canvas);
-        canvas.clipRect(- 600, 0, 600, 600);
+        canvas.clipRect(-IMAGE_WIDTH, 0, IMAGE_WIDTH, IMAGE_WIDTH);
         canvas.rotate(20);
-        canvas.translate(- (100 + 600 / 2), - (100 + 600 / 2));
-        canvas.drawBitmap(mAvatar, 100, 100, mPaint);
+        canvas.translate(-(IMAGE_WIDTH / 2 + 200), -(IMAGE_WIDTH / 2 + 0));
+        canvas.drawBitmap(mAvatar, 200, 0, mPaint);
         canvas.restore();
+
+
+//        // 绘制上半部分
+//        canvas.save();
+//        canvas.translate(100 + 600 / 2, 100 + 600 / 2);
+//        canvas.rotate(-20);
+//        canvas.clipRect(- 600, - 600, 600, 0);
+//        canvas.rotate(20);
+//        canvas.translate(- (100 + 600 / 2), - (100 + 600 / 2));
+//        canvas.drawBitmap(mAvatar, 100, 100, mPaint);
+//        canvas.restore();
+//
+//        // 绘制下半部分
+//        canvas.save();
+//        canvas.translate(100 + 600 / 2, 100 + 600 / 2);
+//        canvas.rotate(-20);
+//        mCamera.applyToCanvas(canvas);
+//        canvas.clipRect(- 600, 0, 600, 600);
+//        canvas.rotate(20);
+//        canvas.translate(- (100 + 600 / 2), - (100 + 600 / 2));
+//        canvas.drawBitmap(mAvatar, 100, 100, mPaint);
+//        canvas.restore();
     }
 
     Bitmap getAvatar(int width) {

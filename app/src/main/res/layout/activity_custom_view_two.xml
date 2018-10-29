@@ -10,12 +10,12 @@
     <com.jaaaelu.gzw.learn.henCoder.customizeVIew.two.SportsView
         android:layout_width="match_parent"
         android:layout_height="270dp"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <com.jaaaelu.gzw.learn.henCoder.customizeVIew.two.ImageTextView
         android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <com.jaaaelu.gzw.learn.henCoder.customizeVIew.two.CameraView
         android:layout_width="match_parent"
