@@ -50,13 +50,22 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".customizeVIew.three.CustomViewActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".customizeVIew.four.CustomViewActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name=".customizeVIew.four.CustomViewActivity">
+        <activity android:name=".customizeVIew.five.CustomViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
